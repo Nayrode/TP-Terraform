@@ -9,6 +9,7 @@ resource "aws_lambda_function" "lambda" {
   environment {
     variables = {
       SNS_TOPIC_ARN = aws_sns_topic.sns_topic.arn
+      SNS_MESSAGE = var.notification_message
     }
   }
 }

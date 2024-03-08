@@ -1,15 +1,9 @@
-resource "aws_sqs_queue" "sns_queue" {
-  name                        = "sqs.fifo"
-  fifo_queue                  = true
-  content_based_deduplication = true
-}
-
 resource "aws_lambda_function" "lambda" {
   function_name = var.lambda_function_name
   handler       = "exports.handler"
-  runtime       = "nodejs12.x"
+  runtime       = "nodejs18.x"
   role          = var.lambda_role_arn
-  filename      = "lambda.js"
+  filename      = "lambda.zip"
   publish       = true
 
   environment {

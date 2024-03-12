@@ -5,7 +5,7 @@ sns = boto3.client('sns')
 
 message = os.environ['SNS_MESSAGE']
 
-topic_arn = os.environ['TOPIC_ARN']
+topic_arn = os.environ['SNS_TOPIC_ARN']
 
 params = {
     'Message': message,

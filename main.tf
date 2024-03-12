@@ -14,3 +14,11 @@ module "SNS" {
   notification_message = var.notification_message
   lambda_role_arn = var.lambda_role_arn
 }
+
+resource "aws_lambda_invocation" "notify" {
+  function_name = SNS.lambda_function_name
+
+  input = jsonencode({
+    instance_id = ec2.id_instance
+  })
+}

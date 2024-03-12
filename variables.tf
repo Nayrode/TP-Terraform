@@ -42,7 +42,7 @@ variable "subscriber_emails" {
 
 variable "notification_message" {
   description = "Notification a envoyer aux abonnés de la file SNS"
-  default     = "Notification"
+  default     = "Une nouvelle EC2 a été créée. id : "
   type        = string
 }
 

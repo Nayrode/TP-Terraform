@@ -13,7 +13,7 @@ params = {
 }
 
 def main(event, context):
-    params['Message'] = params['Message'] + event.instance_id
+    params['Message'] = params['Message'] + event['instance_id']
     response = sns.publish(**params)
     if 'MessageId' in response:
         print('Message published successfully:', response['MessageId'])

@@ -12,7 +12,7 @@ params = {
     'TopicArn': topic_arn
 }
 
-def main():
+def main(event, context):
     response = sns.publish(**params)
 
     if 'MessageId' in response:

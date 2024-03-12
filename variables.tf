@@ -18,7 +18,7 @@ variable "user_data" {
 
 variable "nom_role" {
   description = "Nom du role de l'instance EC2"
-  default = "EC2InstanceRole"
+  default = "EMR_EC2_DefaultRole"
   type    = string
 }
 

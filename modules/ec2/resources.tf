@@ -11,7 +11,7 @@ data "aws_ami" "amazon_linux" {
 resource "aws_instance" "ec2" {
     ami           = data.aws_ami.amazon_linux.id
     instance_type = var.type
-    iam_instance_profile = "EC2InstanceRole"
+    iam_instance_profile = var.nom_role
     user_data     = var.user_data
 
     tags = {

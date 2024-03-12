@@ -16,9 +16,9 @@ module "SNS" {
 }
 
 resource "aws_lambda_invocation" "notify" {
-  function_name = SNS.lambda_function_name
+  function_name = module.SNS.lambda_function_name
 
   input = jsonencode({
-    instance_id = ec2.id_instance
+    instance_id = module.ec2.id_instance
   })
 }

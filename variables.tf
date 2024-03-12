@@ -36,7 +36,7 @@ variable "lambda_function_name" {
 
 variable "subscriber_emails" {
   description = "Liste des emails des abonnés à la file SNS"
-  default     = [""]
+  default     = ["doriantetu34@gmail.com"]
   type        = list(string)
 }
 

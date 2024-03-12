@@ -1,6 +1,6 @@
 resource "aws_lambda_function" "lambda" {
   function_name = var.lambda_function_name
-  handler       = "exports.handler"
+  handler       = "lambda.main"
   runtime       = "python3.11"
   role          = var.lambda_role_arn
   filename      = "lambda.zip"

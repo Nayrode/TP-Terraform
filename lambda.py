@@ -12,9 +12,10 @@ params = {
     'TopicArn': topic_arn
 }
 
-response = sns.publish(**params)
+def main():
+    response = sns.publish(**params)
 
-if 'MessageId' in response:
-    print('Message published successfully:', response['MessageId'])
-else:
-    print('Failed to publish message:', response['ResponseMetadata']['HTTPStatusCode'])
+    if 'MessageId' in response:
+        print('Message published successfully:', response['MessageId'])
+    else:
+        print('Failed to publish message:', response['ResponseMetadata']['HTTPStatusCode'])
